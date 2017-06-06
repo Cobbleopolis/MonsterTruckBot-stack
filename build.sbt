@@ -42,5 +42,7 @@ lazy val twitch = (project in file("twitch")).settings(commonSettings, botSettin
 
 lazy val website = (project in file("website")).settings(commonSettings).dependsOn(common).enablePlugins(PlayScala)
 
-lazy val common = (project in file("common")).settings(commonSettings)
+lazy val common = (project in file("common")).settings(commonSettings).settings(
+    buildInfoKeys := Seq[BuildInfoKey]("name" -> projectName, "displayName" -> displayName, version, scalaVersion, sbtVersion)
+).enablePlugins(BuildInfoPlugin)
         
