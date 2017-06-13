@@ -1,6 +1,8 @@
 package com.cobble.bot.common.api.commands
 
-trait VersionCommand {
+import com.cobble.bot.common.api.Command
+
+trait VersionCommand extends Command {
 
     val name: String = "version"
 
